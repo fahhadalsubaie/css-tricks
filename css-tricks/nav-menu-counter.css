@@ -1,12 +1,20 @@
+/* 
+* Before this css takes effect, you need to adjust the following in elementor WordPress Menu widget's styling tab settings.
+*
+* Horizontal Padding: 0
+* Space Between: 0
+*
+*/
+
 .elementor-nav-menu > li {
   counter-increment: item;
   position: relative;
-  padding-left: 30px !important;
+  padding-left: 30px !important; /* adjust the padding here */
   transition: opacity 0.5s ease;
 }
 
 .elementor-nav-menu > li::before {
-  content: "0" counter(item);
+  content: "0" counter(item); /* here you can modify the prefix of numbers, you use whatever you want between the double quotes "0"*/
   display: inline-block;
   font-weight: bold;
   right: 0;
