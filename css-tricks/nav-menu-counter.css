@@ -6,33 +6,43 @@
 *
 */
 
-.elementor-nav-menu > li {
-  counter-increment: item;
-  position: relative;
-  padding-left: 30px !important; /* adjust the padding here */
-  transition: opacity 0.5s ease;
+/* adjust the screen size on what the padding appears in my case it's ipad and larger (768px) and it won't work on mobile devices.*/
+@media (min-width: 768px) {
+  .elementor-nav-menu > li {
+    padding-left: 30px !important;
+  }
 }
 
-.elementor-nav-menu > li::before {
-  content: "0" counter(item); /* here you can modify the prefix of numbers, you use whatever you want between the double quotes "0"*/
-  display: inline-block;
-  font-weight: bold;
-  right: 0;
-  top: -10px;
-  line-height: 0.6em;
-  font-size: 0.6em;
-  position: absolute;
-  height: auto;
-  opacity: 0.75;
-  transition: opacity 0.3s ease;
-}
 
-.elementor-nav-menu:hover > li,
-.elementor-nav-menu:hover > li::before {
-  opacity: 0.5;
-}
+/* adjust the screen size on which the nav menu counter appears, in my case it's desktop and larger (1024px) and it won't work on mobile devices.*/
+@media (min-width: 1024px) {
+  .elementor-nav-menu > li {
+    counter-increment: item;
+    position: relative;
+    transition: opacity 0.5s ease;
+  }
 
-.elementor-nav-menu > li:hover,
-.elementor-nav-menu > li:hover::before {
-  opacity: 1;
+  .elementor-nav-menu > li::before {
+    content: "0" counter(item); /* here you can modify the prefix of numbers, you use whatever you want between the double quotes "0"*/
+    display: inline-block;
+    font-weight: bold;
+    right: 0;
+    top: -10px;
+    line-height: 0.6em;
+    font-size: 0.6em;
+    position: absolute;
+    height: auto;
+    opacity: 0.75;
+    transition: opacity 0.3s ease;
+  }
+
+  .elementor-nav-menu:hover > li,
+  .elementor-nav-menu:hover > li::before {
+    opacity: 0.5;
+  }
+
+  .elementor-nav-menu > li:hover,
+  .elementor-nav-menu > li:hover::before {
+    opacity: 1;
+  }
 }
